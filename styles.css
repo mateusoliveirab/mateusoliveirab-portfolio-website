@@ -5,11 +5,41 @@
     box-sizing: border-box;
 }
 
+/* Cor de fundo padrão para o modo claro */
 body {
+    background-color: #f5f5f5; /* Cor clara */
+    color: #333; /* Cor do texto */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #fff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Cor de fundo para o modo escuro */
+body.dark-mode {
+    background-color: #121212; /* Cor escura */
+    color: #ffffff; /* Cor do texto */
+}
+
+body.dark-mode .container {
+    background-color: transparent; /* Herda a cor do body */
+}
+
+body.dark-mode .cta-button {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode .skill-card, 
+body.dark-mode .project-card {
+    background-color: #2a2a2a;
+    color: #fff;
+}
+
+/* Estilos para o modo escuro */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+    color: #ffffff;
 }
 
 .container {
@@ -162,6 +192,18 @@ strong {
     font-weight: 500;
 }
 
+/* Estilos para as tags no modo escuro */
+body.dark-mode .tech-stack span {
+    background-color: #444; /* Fundo escuro para contraste */
+    color: #fff; /* Texto branco */
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 5px 5px 0 0;
+    font-size: 0.9em;
+    transition: background-color 0.3s, color 0.3s;
+}
+
 /* Rodapé */
 footer {
     margin-top: 4rem;
@@ -184,4 +226,29 @@ footer {
     .projects-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Botão de alternância de modo escuro */
+.dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode-toggle.dark {
+    background-color: #333;
+    color: #fff;
 }
