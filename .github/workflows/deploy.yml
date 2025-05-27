@@ -30,4 +30,4 @@ jobs:
     - name: Print deployment URL
       run: |
         echo "🚀 Site deployed successfully!"
-        echo "🌐 URL: http://${{ secrets.AWS_S3_BUCKET }}.s3-website-${{ secrets.AWS_REGION }}.amazonaws.com"
+        echo "🌐 URL: http://mateusoliveiraborges-portfolio.s3.us-east-1.amazonaws.com/index.html"
